@@ -7,5 +7,3 @@ function insert(cards){
 };
 
 insert(DOMSelectors.Image); 
-
-console.log(array)
