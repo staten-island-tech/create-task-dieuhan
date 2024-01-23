@@ -1,11 +1,28 @@
-import { DOMSelectors } from './dom'
-import '../style.css'
-import { array } from './array'
+import '../css/style.css'
 
-function insert(cards){
-    cards.forEach((move)=> DOMSelectors.gallery.insertAdjacentHTML("beforeend", move.Image))
-};
+console.log("hi");
 
-insert(DOMSelectors.Image); 
+function computer() {
+  const choices = ["rock", "paper", "scissors"]; //ARRAY
+  const randomizer = Math.floor(Math.random()* choices.length);
+  return choices[randomizer];
+}
 
-console.log(array)
+function winner(){
+if (user == "rock" && computer == "scissors"){
+  return "you win";
+} else if (user == "paper" && computer == "rock"){
+  return "you win";
+} else if (user == "scissors" && computer == "paper"){
+  return "you win";
+} else if (user == computer){
+  return "you tie";
+} else {
+  return "you lose";
+}}
+
+function game(){
+  const computerchoice = computer();
+  const result = winner();
+  
+}
