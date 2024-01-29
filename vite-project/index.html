@@ -1,36 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
 
-    <h1 class="title">Play Rock Paper Scissors!</h1>
-    <h2 class="subtitle">PICK ONE</h2>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
 
-    <div class="choice">
-      <img src="https://i.pinimg.com/736x/d3/36/b6/d336b685d867234c2edb1510841d67f0.jpg" alt="rock">
+<body>
+  <div id="app"></div>
+  <script type="module" src="./js/main.js"></script>
+
+  <h1 class="title">Play Rock Paper Scissors!</h1>
+  <h2 class="subtitle">PICK ONE</h2>
+
+<div class="main">
+  <div class="game-container">
+    <h4 class="h4">Player</h4>
+    <div class="choice-container" id="playerchoices">
+      <img class="emoji" src="https://i.pinimg.com/736x/d3/36/b6/d336b685d867234c2edb1510841d67f0.jpg" alt="">
+      <img class="emoji" src="https://i.pinimg.com/736x/fc/d6/c3/fcd6c3db28379b38e2eacbc5299d456f.jpg" alt="">
+      <img class="emoji" src="https://img.freepik.com/premium-vector/scissors-vector-isolated-icon-emoji-illustration-scissors-vector-emoticon_603823-800.jpg" alt="">
     </div>
+  </div>
 
-    <div class="choice">
-      <img src="https://cdn4.iconfinder.com/data/icons/objects-home-office-essential/48/v-35-512.png" alt="paper">
+  <h3 class="h3">VS</h3>
+
+  <div class="game-container">
+    <h4 class="h4">Computer</h4>
+    <div class="choice-container" id="computerchoices">
+      <img id="computerEmoji" class="emoji" src="" alt="">
     </div>
-
-    <div class="choice">
-      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/share/2702.jpg" alt="scissors">
-    </div>
+  </div>
+</div>
 
 
 
+</body>
 
-  
-
-
-
-  </body>
 </html>
