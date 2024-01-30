@@ -2,9 +2,6 @@ import '../css/style.css'
 
 console.log("hi");
 
-<<<<<<< HEAD
-insert(DOMSelectors.Image); 
-=======
 const choices = ["rock", "paper", "scissors"];
 
 const playerChoices = document.getElementById("playerchoices");
@@ -49,112 +46,58 @@ function getEmojiUrl(choice) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* function computer() {
-  const choices = ["rock", "paper", "scissors"]; //ARRAY
-  const randomizer = Math.floor(Math.random()* choices.length);
-  return choices[randomizer];
+function winner(){
+  if (computerchoice == playerChoices){
+    console.log("YOU TIED");
+  }
 }
 
-function winner(){
-if (user == "rock" && computer == "scissors"){
-  return "you win";
-} else if (user == "paper" && computer == "rock"){
-  return "you win";
-} else if (user == "scissors" && computer == "paper"){
-  return "you win";
-} else if (user == computer){
-  return "you tie";
-} else {
-  return "you lose";
-}}
-
-function game(){
-  const computerchoice = computer();
-  const result = winner();
-  
-} */
-
-/* const choices = ['rock', 'paper', 'scissors'];
+winner();
 
 
 
-  function playerChoice(player) {
-    // Hide other choices
-    for (let i = 0; i < choices.length; i++) {
-      document.querySelectorAll('.choices')[i].style.display = 'none';
-    }
 
-    // Display player choice
-    document.querySelector('.result').textContent = `You chose ${player}`;
 
-    // Get computer choice
-    const computer = choices[Math.floor(Math.random() * choices.length)];
 
-    // Display computer choice after a delay
-    let i = 0;
-    function displayComputerChoice() {
-      document.querySelector('.result').textContent = `You chose ${player}, Computer chose ${computer}`;
-      document.querySelector('.computer-side').innerHTML = `<img src="${getImgUrl(computer)}" alt="${computer}">`;
-      i++;
-      if (i < 1) {
-        setTimeout(displayComputerChoice, 1000);
-      }
-    }
-    
-    setTimeout(displayComputerChoice, 1000);
-  }
 
-  function getImgUrl(choice) {
-    switch (choice) {
-      case 'rock':
-        return 'https://i.pinimg.com/736x/d3/36/b6/d336b685d867234c2edb1510841d67f0.jpg';
-      case 'paper':
-        return 'https://i.pinimg.com/736x/fc/d6/c3/fcd6c3db28379b38e2eacbc5299d456f.jpg';
-      case 'scissors':
-        return 'https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/share/2702.jpg';
-    }
-  } */
->>>>>>> 7bb4d437410a26c1c71bb59d3e8a5cc4cf59898b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
