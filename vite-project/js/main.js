@@ -32,12 +32,12 @@ function computerchoice(){
 const computerChoice = computerchoice();
 
 
-//setTimeout(() => {
+setTimeout(() => {
 const computerEmojiElement = document.getElementById("computerEmoji");
     computerEmojiElement.src = getEmojiUrl(computerChoice);
 
     console.log("Computer picked:", computerChoice);
- // }, 3000);
+  }, 3000);
 
 function getEmojiUrl(choice) {
   if (choice === "rock") {
@@ -52,12 +52,18 @@ function getEmojiUrl(choice) {
 }
 
 function winner(){
-  if (computerChoice == playerChoices){
+  if (choices == playerChoices.filter){
     console.log("YOU TIED");
+  } else if (computerChoice == "rock" && playerChoices.filter == "paper"){
+    console.log("You won")
+  } else if(computerChoice == "scissors" && playerChoices.filter == "rock"){
+    console.log("YOU WON")
+
   }
 }
 
 winner();
+
 
 
 
