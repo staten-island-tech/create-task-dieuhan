@@ -5,10 +5,14 @@ console.log("hi");
 const choices = ["rock", "paper", "scissors"];
 
 const playerChoices = document.getElementById("playerchoices");
+
+let playerChoice;
+let computerChoice; //i literally forgot to define both bye
+
 // click event so the emojis r interactive
 playerChoices.addEventListener("click", (event) => {
   if (event.target.classList.contains("emoji")) {
-    // get player choice
+    // get player choice if its class is emoji
     const playerChoice = event.target.alt.toLowerCase()
     console.log("Player picked:", playerChoice);
     
@@ -16,7 +20,21 @@ playerChoices.addEventListener("click", (event) => {
     Array.from(playerChoices.children)
     .filter(choice => choice !== event.target) //filters for emoji we click
     .forEach(choice => choice.style.display = "none"); //hides the other emojis
+
+const computerChoice = computerchoice();
+
+setTimeout(()=> {
+  const computerEmojiElement = document.getElementById("computerEmoji");
+  computerEmojiElement.src = getEmojiUrl(computerChoice);
+  console.log("Computer picked:", computerChoice);
+  
+  winner(playerChoice, computerChoice); //gotta put it up here so that the code runs AFTER player
+   
+}, 1000);
+
     }});
+
+    
 
 function computerchoice(){
   const randomizer = Math.floor(Math.random() * choices.length); //rando number
@@ -28,16 +46,6 @@ function computerchoice(){
 }
 
 
-
-const computerChoice = computerchoice();
-
-
-setTimeout(() => {
-const computerEmojiElement = document.getElementById("computerEmoji");
-    computerEmojiElement.src = getEmojiUrl(computerChoice);
-
-    console.log("Computer picked:", computerChoice);
-  }, 3000);
 
 function getEmojiUrl(choice) {
   if (choice === "rock") {
@@ -51,18 +59,28 @@ function getEmojiUrl(choice) {
   }
 }
 
-function winner(){
-  if (choices == playerChoices.filter){
-    console.log("YOU TIED");
-  } else if (computerChoice == "rock" && playerChoices.filter == "paper"){
-    console.log("You won")
-  } else if(computerChoice == "scissors" && playerChoices.filter == "rock"){
-    console.log("YOU WON")
+function winner(playerChoice, computerChoice){
+const winnermessageElement = document.getElementById("winnermessage")
 
+  if(playerChoice === computerChoice){
+    console.log("ITS A TIE");
+    winnermessageElement.textContent = "ITS A TIE";
+  } else if (playerChoice === "rock" && computerChoice === "scissors"){
+    console.log("YOU WON");
+    winnermessageElement.textContent = "YOU WIN";
+  } else if (playerChoice === "paper" && computerChoice === "rock"){
+    console.log("YOU WON");
+    winnermessageElement.textContent = "YOU WIN";
+  } else if (playerChoice === "scissors" && computerChoice === "paper"){
+    console.log("YOU WON");
+    winnermessageElement.textContent = "YOU WIN";
+  } else {
+    console.log("YOU LOST the computer won :(");
+    winnermessageElement.textContent = "YOU LOST the computer won :(";
   }
 }
 
-winner();
+
 
 
 
