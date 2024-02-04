@@ -57,3 +57,14 @@
   padding: 10px;
 }
 
+@media screen and (max-width: 900px){
+  .card{
+      width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .card {
+      width: 100%;
+  }
+}
