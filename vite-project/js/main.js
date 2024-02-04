@@ -4,47 +4,44 @@ console.log("hi");
 
 const choices = ["rock", "paper", "scissors"];
 
+
+
 const playerChoices = document.getElementById("playerchoices");
 
-let playerChoice;
-let computerChoice; //i literally forgot to define both bye
-
-// click event so the emojis r interactive
 playerChoices.addEventListener("click", (event) => {
   if (event.target.classList.contains("emoji")) {
-    // get player choice if its class is emoji
+
     const playerChoice = event.target.alt.toLowerCase()
     console.log("Player picked:", playerChoice);
-    
-    // hide other choices
+
+
     Array.from(playerChoices.children)
-    .filter(choice => choice !== event.target) //filters for emoji we click
-    .forEach(choice => choice.style.display = "none"); //hides the other emojis
+      .filter(choice => choice !== event.target)
+      .forEach(choice => choice.style.display = "none");
 
-const computerChoice = computerchoice();
+    const computerChoice = computerchoice();
 
-setTimeout(()=> {
-  const computerEmojiElement = document.getElementById("computerEmoji");
-  computerEmojiElement.src = getEmojiUrl(computerChoice);
-  console.log("Computer picked:", computerChoice);
-  
-  winner(playerChoice, computerChoice); //gotta put it up here so that the code runs AFTER player
-   
-}, 1000);
+    setTimeout(() => {
+      const computerEmojiElement = document.getElementById("computerEmoji");
+      computerEmojiElement.src = getEmojiUrl(computerChoice);
+      console.log("Computer picked:", computerChoice);
 
-    }});
+      winner(playerChoice, computerChoice);
 
-    
+    }, 1000);
 
-function computerchoice(){
-  const randomizer = Math.floor(Math.random() * choices.length); //rando number
-  for (let i = 0; i < choices.length; i++) { //redundent but js in case
-    if (i === randomizer) { 
-      return choices[i]; //if its equal return the emoji that matches the number
+  }
+});
+
+
+function computerchoice() {
+  const randomizer = Math.floor(Math.random() * choices.length);
+  for (let i = 0; i < choices.length; i++) {
+    if (i === randomizer) {
+      return choices[i];
     }
   }
 }
-
 
 
 function getEmojiUrl(choice) {
@@ -59,19 +56,19 @@ function getEmojiUrl(choice) {
   }
 }
 
-function winner(playerChoice, computerChoice){
-const winnermessageElement = document.getElementById("winnermessage")
+function winner(playerChoice, computerChoice) {
+  const winnermessageElement = document.getElementById("winnermessage")
 
-  if(playerChoice === computerChoice){
+  if (playerChoice === computerChoice) {
     console.log("ITS A TIE");
     winnermessageElement.textContent = "ITS A TIE";
-  } else if (playerChoice === "rock" && computerChoice === "scissors"){
+  } else if (playerChoice === "rock" && computerChoice === "scissors") {
     console.log("YOU WON");
     winnermessageElement.textContent = "YOU WIN";
-  } else if (playerChoice === "paper" && computerChoice === "rock"){
+  } else if (playerChoice === "paper" && computerChoice === "rock") {
     console.log("YOU WON");
     winnermessageElement.textContent = "YOU WIN";
-  } else if (playerChoice === "scissors" && computerChoice === "paper"){
+  } else if (playerChoice === "scissors" && computerChoice === "paper") {
     console.log("YOU WON");
     winnermessageElement.textContent = "YOU WIN";
   } else {
